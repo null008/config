@@ -1,13 +1,20 @@
 spring:
-   profiles:
-      active:
-        - dev
+  profiles:
+    active:
+      - dev
+
 ---
+
 spring:
   profiles: dev
   application:
-      name: microcloud-config-eureka-client
-
+    name: microcloud-config-eureka-client
+  security:
+    user:
+      name: admin  # 认证用户名
+      password: enjoy  # 认证密码
+      roles:
+        - USER # 授权角色
 server:
   port: 7001
 
@@ -23,13 +30,6 @@ eureka:
     eviction-interval-timer-in-ms: 1000  # 默认清理的时间间隔 默认60000
     enable-self-preservation: false # false 关闭保护模式
 
-spring:
- security:
-    user:
-      name: admin  # 认证用户名
-      password: enjoy  # 认证密码
-      roles:
-       - USER # 授权角色
 
 info:
   app.name: microcloud-config-eureka-client
@@ -42,8 +42,14 @@ info:
 spring:
   profiles: beta
   application:
-      name: microcloud-config-eureka-client
+    name: microcloud-config-eureka-client
 
+  security:
+    user:
+      name: admin  # 认证用户名
+      password: enjoy  # 认证密码
+      roles:
+        - USER # 授权角色
 server:
   port: 7011
 
@@ -58,14 +64,6 @@ eureka:
   server:
     eviction-interval-timer-in-ms: 1000  # 默认清理的时间间隔 默认60000
     enable-self-preservation: false # false 关闭保护模式
-
-spring:
- security:
-    user:
-      name: admin  # 认证用户名
-      password: enjoy  # 认证密码
-      roles:
-       - USER # 授权角色
 
 info:
   app.name: microcloud-config-eureka-client
