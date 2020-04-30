@@ -30,11 +30,6 @@ eureka:
     eviction-interval-timer-in-ms: 1000  # 默认清理的时间间隔 默认60000
     enable-self-preservation: false # false 关闭保护模式
 
-
-info:
-  app.name: microcloud-config-eureka-client
-  company.name: null008
-
 ---
 
 
