@@ -1,0 +1,72 @@
+spring:
+   profiles:
+      active:
+        - dev
+---
+spring:
+  profiles: dev
+  application:
+      name: microcloud-config-eureka-client
+
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: eureka
+  client:
+    fetch-registry: false # 是否要从eureka 中获取注册信息
+    register-with-eureka: false #是否注册到eureka
+    service-url:
+      defaultZone: http://admin:enjoy@eureka:7001/eureka
+  server:
+    eviction-interval-timer-in-ms: 1000  # 默认清理的时间间隔 默认60000
+    enable-self-preservation: false # false 关闭保护模式
+
+spring:
+ security:
+    user:
+      name: admin  # 认证用户名
+      password: enjoy  # 认证密码
+      roles:
+       - USER # 授权角色
+
+info:
+  app.name: microcloud-config-eureka-client
+  company.name: null008
+
+---
+
+
+
+spring:
+  profiles: beta
+  application:
+      name: microcloud-config-eureka-client
+
+server:
+  port: 7011
+
+eureka:
+  instance:
+    hostname: eureka
+  client:
+    fetch-registry: false # 是否要从eureka 中获取注册信息
+    register-with-eureka: false #是否注册到eureka
+    service-url:
+      defaultZone: http://admin:enjoy@eureka:7001/eureka
+  server:
+    eviction-interval-timer-in-ms: 1000  # 默认清理的时间间隔 默认60000
+    enable-self-preservation: false # false 关闭保护模式
+
+spring:
+ security:
+    user:
+      name: admin  # 认证用户名
+      password: enjoy  # 认证密码
+      roles:
+       - USER # 授权角色
+
+info:
+  app.name: microcloud-config-eureka-client
+  company.name: null008
