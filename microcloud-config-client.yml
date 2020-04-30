@@ -13,7 +13,7 @@ spring:
 
 info:
   app.name: microconfig-config-client
-  company.name: null008
+  company.name: 000000
 
 ---
 server:
